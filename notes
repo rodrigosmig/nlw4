@@ -1,0 +1,58 @@
+# iniciar projeto
+yarn init -y
+
+#Instalar express
+yarn add express
+
+# instalar pacote como dependência de desenvolvimento
+yarn add @types/express -D
+
+#instalar o typescript
+yarn add typescript -D
+
+#inicializar o typescript na aplicação
+yarn tsc --init
+
+#pacote para converter o código de ts para js
+yarn add ts-node-dev -D
+
+#adicionar chave em package.json para a conversão
+"script": {
+    "dev": "ts-node-dev src/server.ts"
+}
+
+#executar server
+yarn dev
+
+#Criar  o comando de migration dentro do package.json.scripts
+"typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+
+#Comando para criar migrations
+yarn typeorm migration:create -n CreateUsers
+
+#Comando para executar migrations
+yarn typeorm migration:run
+
+#Testes
+$instalar o jest
+yarn add jest ts-jest @types/jest -D
+yarn add supertest @types/supertest -D
+
+#Iniciar jest
+yarn jest --init
+
+#descomentar no jest.config.ts
+bail: true,
+preset: "ts-jest",
+
+#Instalar nodemailer para enviar email
+yarn add nodemailer
+
+#instalar handlebars para template de email
+yarn add handlebars
+
+#para criar validações usar a biblioteca yup validation
+yarn add yup
+
+#Instalar para o express lidar com erros
+yarn add express-async-errors
